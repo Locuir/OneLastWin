@@ -107,7 +107,7 @@ export default function bot({ history, memory }) {
     }
 
 
-    if (Math.random() < 0.2 && memory.DebtPoints > 0) {
+    if (Math.random() < 0.4 && memory.DebtPoints > 0) {
 
         return ["D", memory];
 
