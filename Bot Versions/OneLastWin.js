@@ -88,10 +88,14 @@ export default function bot({ history, memory }) {
 
         return ["D", memory];
     }
-    else if (history.at(-1).opponent === "D") {
+    if (Rounds > 0) {
+             if (history.at(-1).opponent === "D") {
 
-        return ["D", memory];        
+            return ["D", memory];
+        }
+
     }
+
     
 
 
