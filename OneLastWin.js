@@ -22,12 +22,32 @@ export default function bot({ history, memory }) {
 
         };
     }
+
+    // Revange System
     if (Rounds > 0) {
-        if (history.at(-1).you == "C" ) {
+        if (history.at(-1).you == "C" && history.at(-1).opponent == "D") {
 
-            
+            memory.IC_OD += 1;
         }
+        else if (history.at(-1).you == "D" && history.at(-1).opponent == "C") {
 
+            memory.ID_OC += 1;
+        }
+        else if (history.at(-1).you == "D" && history.at(-1).opponent == "D") {
+
+            memory.ID_OD += 1;
+        }
+        else if (history.at(-1).you == "C" && history.at(-1).opponent == "C") {
+
+            memory.IC_OC += 1;
+        }
+        if (memory.IC_OC == 50) {
+
+            memory.IC_OD -= 1;
+            memory.IC_OC = 0;
+
+        }
+        memory.OpponentPoints = IC_OD - ID_OC;
     }
     
 
@@ -82,7 +102,13 @@ export default function bot({ history, memory }) {
     }
 
 
-    
+    if (Math.floor(Math.random()*5) == "4" && memory.OpponentPoints > 0) {
+
+
+        memory.IC_OD -= 1;
+        return ["D", memory];
+
+    }
 
     if (memory.IsDefectBot) {
 
@@ -137,3 +163,5 @@ function CheckIsBullyBot(OpponentDRate) {
 
     return false;
 }
+
+

@@ -20,7 +20,7 @@
 Strategy
 
 We Count the opponent's History Of responding to our bot
-If We "C" and He Responded With "C" 10 times He Got -1 point
+If We "C" and He Responded With "C" 50 times He Got -1 point
 if We "C" and He Responded With "D" He Got +1 point
 if We "D" and He Responded With "D" He Got  0 point
 if we "D" and He Responded With "C" He Got -1 point
