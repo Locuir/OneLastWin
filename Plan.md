@@ -15,4 +15,26 @@
 -To catch the defect every other round , we need to catch him in the early round to punish him in the "C" rounds
 
 
+
+-----------------------------------------------------------------------------
+Strategy
+
+We Count the opponent's History Of responding to our bot
+If We "C" and He Responded With "C" 10 times He Got -1 point
+if We "C" and He Responded With "D" He Got +1 point
+if We "D" and He Responded With "D" He Got  0 point
+if we "D" and He Responded With "C" He Got -1 point
+
+
+
+
+We the Count the points and use it to revenge for every time he  Responded With "D" , at a rondom round we choose "D" and we minus a point
+
+its like a revange system for every time he choose "D"
+
+
+
+
+
+
 End..
