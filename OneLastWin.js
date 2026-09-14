@@ -18,7 +18,7 @@ export default function bot({ history, memory }) {
             ID_OD: 0,
             IC_OC: 0,
 
-            OpponentPoints :0
+            DebtPoints :0
 
         };
     }
@@ -28,10 +28,15 @@ export default function bot({ history, memory }) {
         if (history.at(-1).you == "C" && history.at(-1).opponent == "D") {
 
             memory.IC_OD += 1;
+            memory.DebtPoints += 1;
         }
         else if (history.at(-1).you == "D" && history.at(-1).opponent == "C") {
 
             memory.ID_OC += 1;
+            if (memory.DebtPoints > 0) {
+                memory.DebtPoints -= 1;
+            }
+            
         }
         else if (history.at(-1).you == "D" && history.at(-1).opponent == "D") {
 
@@ -41,13 +46,13 @@ export default function bot({ history, memory }) {
 
             memory.IC_OC += 1;
         }
-        if (memory.IC_OC == 50) {
+        if (memory.IC_OC == 50 || memory.IC_OC == 100) {
 
-            memory.IC_OD -= 1;
-            memory.IC_OC = 0;
+            if (memory.DebtPoints > 0) {
+                memory.DebtPoints -= 1;
+            }
 
         }
-        memory.OpponentPoints = IC_OD - ID_OC;
     }
     
 
@@ -102,10 +107,8 @@ export default function bot({ history, memory }) {
     }
 
 
-    if (Math.floor(Math.random()*5) == "4" && memory.OpponentPoints > 0) {
+    if (Math.random() < 0.2 && memory.DebtPoints > 0) {
 
-
-        memory.IC_OD -= 1;
         return ["D", memory];
 
     }
@@ -126,10 +129,7 @@ export default function bot({ history, memory }) {
 
         return ["D", memory];
     }
-    else if (history.at(-1).opponent === "D") {
 
-        return ["D", memory];        
-    }
     
 
 
