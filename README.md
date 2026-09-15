@@ -25,9 +25,13 @@ To counter them, we have some methods:
 Tested in a 750 battle
 
 Average Score: 8.977
+
 Win Rate: 36.1%
+
 Wins : 271
+
 loses : 116
+
 ties : 363
 
 reached #4 on the leaderboard 
