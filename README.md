@@ -20,6 +20,16 @@ To counter them, we have some methods:
 
 * After the 120th round, the bot starts to choose D to win the game after the other bot has trusted ours.
 
-## BOT Page
-Check how our bot here : [One Last Win Bot](https://defector.hackclub.com/bot/mfz2qlwvhaivmshil732)
+## Performance
 
+Tested in a 750 battle
+
+Average Score: 8.977
+Win Rate: 36.1%
+Wins : 271
+loses : 116
+ties : 363
+
+reached #4 on the leaderboard 
+
+Check how our bot performance here : [One Last Win Bot](https://defector.hackclub.com/bot/mfz2qlwvhaivmshil732)
